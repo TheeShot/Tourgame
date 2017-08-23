@@ -1,46 +1,14 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+//reference to namespace so you dont have to write App/... al the time
+use App\stage;
 
 Route::get('/', function () {
 
-	$tasks = [
-		'Get pool done',
-		'Ask Feedback',
-		'Put it online'
-	];
-
-    return view('welcome', compact('tasks')
-
-    	/* An other way to do this
-    	[
-    	'name' => 'Stephan'
-    	'age' => 19
-    	]*/
-    	);
+    return view('index');
 });
 
-// stages overview
-Route::get('/stages', function ( ) {
 
-	$stages = DB::table('stages')->get();
+Route::get('/stages', 'StagesController@index');
 
-	return view('stages.index', compact('stages'));
-});
-
-// particular stage summary
-Route::get('/stages/{stage}', function ($id) {
-
-	$stage = DB::table('stages')->find($id);
-
-	return view('stages.show', compact('stage'));
-});
+Route::get('/stages/{stage}', 'StagesController@show');
