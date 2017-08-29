@@ -8,7 +8,12 @@ Route::get('/', function () {
     return view('index');
 });
 
-
+// Stages summary
 Route::get('/stages', 'StagesController@index');
 
-Route::get('/stages/{stage}', 'StagesController@show');
+// details stages
+Route::get('/stages/stage{stage}', 'StagesController@show');
+
+//add stages
+Route::get('/stages/create', 'StagesController@create');
+Route::post('/stages', 'StagesController@store');
