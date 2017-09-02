@@ -5,28 +5,34 @@
 	<div class="container">
 		<h1><br/>Etappe toevoegen</h1>
 
-		<form method="POST" action="/stages">
 
+		
+		<form method="POST" action="/admin/stages">
+
+			<!-- code to verify form is coming from own server -->
 			{{ csrf_field() }}
+
+			<!-- checking for errors in submit-->
+			@include('layouts.errors')
 
 		  <div class="form-group">
 		    <label for="date">Datum Etappe</label>
-		    <input type="date" name="stage_date" class="form-control" id="stage_date" aria-describedby="stage-date" placeholder="Datum etappe">
+		    <input type="date" name="stage_date" class="form-control" id="stage_date" aria-describedby="stage-date" placeholder="Datum etappe" >
 		  </div>
 
 		  <div class="form-group">
 		    <label for="start">Start Plaatsnaam</label>
-		    <input type="text" name="stage_start" class="form-control" id="stage_start" placeholder="Start vind plaats in ...">
+		    <input type="text" name="stage_start" class="form-control" id="stage_start" placeholder="Start vind plaats in ..." >
 		  </div>
 
 		  <div class="form-group">
 		    <label for="finish">Finish Plaatsnaam</label>
-		    <input type="text" name="stage_finish" class="form-control" id="stage_finish" placeholder="Finish is in ...">
+		    <input type="text" name="stage_finish" class="form-control" id="stage_finish" placeholder="Finish is in ..." >
 		  </div>
 
 		  <div class="form-group">
 		    <label for="km">Aantal km</label>
-		    <input type="text" name="stage_km" class="form-control" id="stage_km" placeholder="Aantal kilometer">
+		    <input type="text" name="stage_km" class="form-control" id="stage_km" placeholder="Aantal kilometer" >
 		  </div>
 
 		  <div class="form-group">
@@ -36,7 +42,7 @@
 
 		  <div class="form-group">
 		    <label for="stage-sort">Soort rit</label>
-		    <select class="form-control" id="stage_sort" name="stage_sort">
+		    <select class="form-control" id="stage_sort" name="stage_sort" >
 		      <option>Vlak</option>
 		      <option>Heuvelachtig</option>
 		      <option>Berg</option>
@@ -48,6 +54,9 @@
 		  <button type="submit" class="btn btn-primary">Toevoegen</button>
 
 		</form>
+
+		
+
 		<br/><br/>
 
 	</div>

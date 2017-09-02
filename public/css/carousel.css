@@ -13,6 +13,10 @@ body {
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
+tr.hover {
+   cursor: pointer;
+}
+
 /* Carousel base class */
 .carousel {
   margin-bottom: 4rem;

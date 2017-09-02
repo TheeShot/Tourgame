@@ -20,12 +20,17 @@ Route::get('/admin', function () {
 });
 
 // Stages summary
-Route::get('/admin/stages', 'StagesController@index');
+Route::get('admin/stages', 'StagesController@index');
 
 // details stages
-Route::get('admin/stages/stage{stage}', 'StagesController@show');
+Route::get('admin/stages/{stage}', 'StagesController@show');
 
 //add stages
-Route::get('admin/stages/create', 'StagesController@create');
+Route::get('/admin/stages/create', 'StagesController@create');
 
 Route::post('admin/stages', 'StagesController@store');
+
+//remove stages
+Route::get('admin/stages/delete/{stage}', ['as' => 'stage.delete', 'uses' => 'StagesController@delete']);
+
+

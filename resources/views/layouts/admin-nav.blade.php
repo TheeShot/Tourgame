@@ -16,7 +16,7 @@
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link" href="admin/stages/">Etappes</a>
+            <a class="nav-link" href="/admin/stages">Etappes</a>
 
           </li>
 

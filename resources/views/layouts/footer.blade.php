@@ -11,12 +11,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-    <script type="javascript">
-    	
-    	$('ul.nav li.dropdown').hover(function() {
-            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
-        }, function() {
-            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
-        });
 
+    <script>
+    
+
+        $('tr').click( function() {
+            window.location = $(this).find('a').attr('href');
+        }).hover( function() {
+            $(this).toggleClass('hover');
+        });
     </script>

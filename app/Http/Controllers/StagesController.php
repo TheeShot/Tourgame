@@ -35,16 +35,27 @@ class StagesController extends Controller
 
 	public function create()
 
-		{
+	  	{
 
-			return view('admin.stages.create');
+	  		return view('admin.stages.create');
 
 	  	}
-
 
 	public function store()
 
 		{
+
+			//validate data
+			$this->validate(request(), [
+
+				'stage_date' => 'required',
+				'stage_start' => 'required|min:3',
+				'stage_finish' => 'required',
+				'stage_km' => 'required',
+				'stage_sort' => 'required'
+
+
+				]);
 
 			// check of alle data goed is: 			dd(request()->all());
 			
@@ -76,11 +87,22 @@ class StagesController extends Controller
 				]);
 
 			// And then redirect to.. homepage?
-			return redirect('/admin');
+			return redirect('/admin/stages');
 			
 
 
 	  	}
+
+	  	public function delete(stage $stage)
+
+		{
+			$id = $stage->id;
+			$nStage = stage::find($id);
+			$nStage->delete();
+			return back();
+
+		}
+
 
 
 }
