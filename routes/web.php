@@ -8,12 +8,24 @@ Route::get('/', function () {
     return view('index');
 });
 
+/*
+---------------
+ADMIN
+---------------
+*/
+
+Route::get('/admin', function () {
+
+    return view('admin/index');
+});
+
 // Stages summary
-Route::get('/stages', 'StagesController@index');
+Route::get('/admin/stages', 'StagesController@index');
 
 // details stages
-Route::get('/stages/stage{stage}', 'StagesController@show');
+Route::get('admin/stages/stage{stage}', 'StagesController@show');
 
 //add stages
-Route::get('/stages/create', 'StagesController@create');
-Route::post('/stages', 'StagesController@store');
+Route::get('admin/stages/create', 'StagesController@create');
+
+Route::post('admin/stages', 'StagesController@store');

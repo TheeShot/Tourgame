@@ -17,7 +17,7 @@ class StagesController extends Controller
 		  	// Stages overview 
 			$stages = stage::all();
 
-			return view('stages.index', compact('stages'));
+			return view('admin.stages.index', compact('stages'));
 
 	  	}
 
@@ -28,7 +28,7 @@ class StagesController extends Controller
 
 	  		// $stage = stage::find($id);  vervalt vanwege Route Model Binding
 
-			return view('stages.show', compact('stage'));
+			return view('admin.stages.show', compact('stage'));
 
 	  	}
 
@@ -37,7 +37,7 @@ class StagesController extends Controller
 
 		{
 
-			return view('stages.create');
+			return view('admin.stages.create');
 
 	  	}
 
@@ -76,7 +76,8 @@ class StagesController extends Controller
 				]);
 
 			// And then redirect to.. homepage?
-			return redirect('/');
+			return redirect('/admin');
+			
 
 
 	  	}
