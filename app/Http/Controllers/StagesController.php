@@ -9,7 +9,7 @@ class StagesController extends Controller
 	{
 
 
-	  public function index()
+	public function index()
 
 	  	{
 
@@ -22,7 +22,7 @@ class StagesController extends Controller
 	  	}
 
 
-	  public function show(stage $stage)
+	public function show(stage $stage)
 
 	  	{
 
@@ -93,16 +93,58 @@ class StagesController extends Controller
 
 	  	}
 
-	  	public function delete(stage $stage)
+	  	public function delete($id)
 
 		{
-			$id = $stage->id;
 			$nStage = stage::find($id);
 			$nStage->delete();
 			return back();
 
 		}
 
+		public function edit(stage $stage)
+
+		{
+			return view('admin.stages.edit', compact('stage'));
+
+		}
+
+
+		public function update($stage)
+
+		{
+			
+			$Stage=stage::findOrFail($stage);
+
+			$this->validate(request(), [
+
+				'stage_date' => 'required',
+				'stage_start' => 'required|min:3',
+				'stage_finish' => 'required',
+				'stage_km' => 'required',
+				'stage_sort' => 'required'
+
+				]);
+
+			
+			stage::update([
+
+				'date' => request('stage_date'),
+				'start' => request('stage_start'),
+				'finish' => request('stage_finish'),
+				'km' => request('stage_km'),
+				'profile_image_link' => request('stage_profile'),
+				'soort_rit' => request('stage_sort')
+
+				]);
+
+			Session::flash('flash_message', 'Successvol geupdate!');
+
+			// And then redirect
+			return redirect('/admin/stages');
+
+		}
+		
 
 
 }

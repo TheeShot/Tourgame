@@ -26,7 +26,7 @@
 		      	<td>{{ $stage->km }}</td>
 		      	<td>{{ $stage->soort_rit }}</td>
 		      	<td><a href="/admin/stages/{{ $stage->id }}">view-icon</a></td>
-		      	<td><a href="/admin/stages/{{ $stage->id }}">edit-icon</a></td>
+		      	<td><a href="/admin/stages/edit/{{ $stage->id }}">edit-icon</a></td>
 		      	<td><a href="{{ route('stage.delete', $stage->id) }}" onclick='return confirm("Zeker weten?")'>Delete</a></td>
 
 		    </tr>

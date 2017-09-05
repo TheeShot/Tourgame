@@ -5,10 +5,10 @@ namespace App;
 class stage extends Model
 {
 
+	/*
+	protected $fillable = ['date', 'start', 'finish', 'km', 'profile_image_link', 'soort_rit'];
 
-	//protected $fillable = ['date', 'start', 'finish', 'km', 'profile_image_link', 'soort_rit'];
-
-	//protected $guarded = [];
+	protected $guarded = [];
 
 
 
@@ -33,5 +33,7 @@ class stage extends Model
 		return $query->where('km', '>', 200);
 
 	}
+
+	*/
 
 }    
