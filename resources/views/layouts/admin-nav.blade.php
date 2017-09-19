@@ -8,11 +8,11 @@
         <ul class="nav navbar-nav">
 
           <li class="nav-item">
-            <a class="nav-link" href="#">Teams</a>
+            <a class="nav-link" href="/admin/teams">Teams</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">Renners</a>
+            <a class="nav-link" href="/admin/cyclists">Renners</a>
           </li>
 
           <li class="nav-item dropdown">
@@ -23,3 +23,6 @@
         </ul>
       </div>
 </nav>
+
+<br/>
+<br/>

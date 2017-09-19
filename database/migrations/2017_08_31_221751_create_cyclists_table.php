@@ -12,11 +12,28 @@ class CreateCyclistsTable extends Migration
      * @return void
      */
     public function up()
+    
     {
         Schema::create('cyclists', function (Blueprint $table) {
+
             $table->increments('id');
+
+            $table->integer('team_id');
+
+            $table->integer('startNumber');
+
+            $table->string('lastName', 50);
+
+            $table->string('firstName', 50);
+
+            $table->string('nationality', 3);
+
+            $table->boolean('start');
+
             $table->timestamps();
+
         });
+
     }
 
     /**

@@ -20,8 +20,12 @@
 
     @include ('layouts.admin-nav')
 
-   	@yield('content')
+    <div class="container">
 
+   	  @yield('content')
+
+    </div>
+    
     @include('layouts.footer')
 
   </body>

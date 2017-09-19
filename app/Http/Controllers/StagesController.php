@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\stage;
+use Illuminate\Http\Request;
 
 class StagesController extends Controller
 
@@ -27,7 +28,6 @@ class StagesController extends Controller
 	  	{
 
 	  		// $stage = stage::find($id);  vervalt vanwege Route Model Binding
-
 			return view('admin.stages.show', compact('stage'));
 
 	  	}
@@ -59,7 +59,6 @@ class StagesController extends Controller
 
 			// check of alle data goed is: 			dd(request()->all());
 			
-
 			// Create a new stage using the request data
 
 			// OPTIE 1
@@ -110,11 +109,17 @@ class StagesController extends Controller
 		}
 
 
-		public function update($stage)
+
+
+		/**
+     	* Update the specified resource in storage.
+      	*/
+
+		public function update(Request $request, $id)
 
 		{
 			
-			$Stage=stage::findOrFail($stage);
+			$Stage = stage::findOrFail($id);
 
 			$this->validate(request(), [
 
@@ -127,23 +132,22 @@ class StagesController extends Controller
 				]);
 
 			
-			stage::update([
+			$Stage->date = $request->get('stage_date');
+			$Stage->start = $request->get('stage_start');
+			$Stage->finish = $request->get('stage_finish');
+			$Stage->km = $request->get('stage_km');
+			$Stage->profile_image_link = $request->get('stage_profile');
+			$Stage->soort_rit = $request->get('stage_sort');
 
-				'date' => request('stage_date'),
-				'start' => request('stage_start'),
-				'finish' => request('stage_finish'),
-				'km' => request('stage_km'),
-				'profile_image_link' => request('stage_profile'),
-				'soort_rit' => request('stage_sort')
-
-				]);
-
-			Session::flash('flash_message', 'Successvol geupdate!');
+			$Stage->save();
 
 			// And then redirect
 			return redirect('/admin/stages');
 
 		}
+
+			
+
 		
 
 

@@ -2,7 +2,7 @@
       <div class="container">
       <footer>
         <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; {{ date('Y') }} <a href="http://www.samspit.com/" alt="Samspit creative media Solutions">SamSpit.com</a>. Creative Media Solutions</p>
       </footer>
     </div>  
 
@@ -14,10 +14,13 @@
 
     <script>
     
+    /* ON HOVER TABLE ROW CLICKABLE
 
         $('tr').click( function() {
             window.location = $(this).find('a').attr('href');
         }).hover( function() {
             $(this).toggleClass('hover');
         });
+    */
+    
     </script>

@@ -7,8 +7,10 @@
 
 
 		
-		<form method="POST" action="{{ route('stage.update', $stage->id) }}">
-			<input type="hidden" name="_method" value="PATCH">
+		<form method="POST" action="{!! route('stage.update', $stage->id) !!}">
+	
+			{{ method_field('PATCH') }}
+
 			<!-- code to verify form is coming from own server -->
 			{{ csrf_field() }}
 
@@ -17,27 +19,27 @@
 
 		  <div class="form-group">
 		    <label for="date">Datum Etappe</label>
-		    <input type="date" name="stage_date" class="form-control" id="stage_date" aria-describedby="stage-date" placeholder="Datum etappe" value="{{ $stage->date }}">
+		    <input type="date" name="stage_date" class="form-control" id="stage_date" aria-describedby="stage-date" placeholder="Datum etappe" value="{{{ $stage->date }}}">
 		  </div>
 
 		  <div class="form-group">
 		    <label for="start">Start Plaatsnaam</label>
-		    <input type="text" name="stage_start" class="form-control" id="stage_start" value="{{ $stage->start }}" >
+		    <input type="text" name="stage_start" class="form-control" id="stage_start" value="{{{ $stage->start }}}" >
 		  </div>
 
 		  <div class="form-group">
 		    <label for="finish">Finish Plaatsnaam</label>
-		    <input type="text" name="stage_finish" class="form-control" id="stage_finish" value="{{ $stage->finish }}">
+		    <input type="text" name="stage_finish" class="form-control" id="stage_finish" value="{{{ $stage->finish }}}">
 		  </div>
 
 		  <div class="form-group">
 		    <label for="km">Aantal km</label>
-		    <input type="text" name="stage_km" class="form-control" id="stage_km" value="{{ $stage->km }}" >
+		    <input type="text" name="stage_km" class="form-control" id="stage_km" value="{{{ $stage->km }}}" >
 		  </div>
 
 		  <div class="form-group">
 		    <label for="image">Etappe profiel</label>
-		    <input type="text" name="stage_profile" class="form-control" id="stage_profile" value="{{ $stage->profile_image_link }}">
+		    <input type="text" name="stage_profile" class="form-control" id="stage_profile" value="{{{ $stage->profile_image_link }}}">
 		  </div>
 
 		  <div class="form-group">

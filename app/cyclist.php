@@ -2,9 +2,20 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
 class cyclist extends Model
+
 {
-    //
+ 
+	//Declare relationship with Team
+	// $cyclist->team;
+
+	public function team()
+
+	{
+
+		return $this->belongsTo(team::class);
+
+	}
+
+
 }
